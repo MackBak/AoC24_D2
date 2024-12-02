@@ -26,5 +26,13 @@ public class Main {
                 System.out.println("Safe sum is now: " + safeSum);
             }
         }
+
+        System.out.println(calculator.isSafe(List.of(1, 2, 3, 4))); // true (increasing)
+        System.out.println(calculator.isSafe(List.of(4, 3, 2, 1))); // true (decreasing)
+        System.out.println(calculator.isSafe(List.of(1, 3, 2, 4))); // false (trend reversal)
+        System.out.println(calculator.isSafe(List.of(1, 2, 2, 3))); // false (equal values)
+        System.out.println(calculator.isSafe(List.of(5)));      // true (trivially safe)
+        System.out.println(calculator.isSafe(List.of()));           // true (trivially safe)
+
     }
 }
