@@ -11,9 +11,21 @@ public class Main {
 
         List<List<Integer>> arrays = csvReader.csvParseToArrays(csvFile);
 
+//        // Testprint to check if Arrays split
+//        for (int i = 0; i < arrays.size() ; i++) {
+//            System.out.println("### Printing Array " + i + " ###");
+//            System.out.println(arrays.get(i));
+//        }
+
+        // Print to confirm safe combinations
+        int safeSum = 0;
         for (int i = 0; i < arrays.size() ; i++) {
-            System.out.println("### Printing Array " + i + " ###");
-            System.out.println(arrays.get(i));
+            boolean safe = calculator.isSafe(arrays.get(i));
+            if (safe) {
+                safeSum = safeSum + 1;
+                System.out.println("Safe sum is now: " + safeSum);
+            }
         }
+
     }
 }
