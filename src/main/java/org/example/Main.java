@@ -14,7 +14,7 @@ public class Main {
 //        // Testprint to check if Arrays split
 //        for (int i = 0; i < arrays.size() ; i++) {
 //            System.out.println("### Printing Array " + i + " ###");
-//            System.out.println(arrays.get(i));
+//            System.out.println(arrays.get(i)); // 999 arrays
 //        }
 
         // Print to confirm safe combinations
@@ -26,6 +26,5 @@ public class Main {
                 System.out.println("Safe sum is now: " + safeSum);
             }
         }
-
     }
 }

@@ -12,7 +12,7 @@ public class calculator {
         boolean increasing = array.get(1) > array.get(0);
         boolean decreasing = array.get(1) < array.get(0);
 
-        for (int i = 0; i < array.size() ; i++) {
+        for (int i = 0; i < array.size() - 1 ; i++) {
             if (increasing && array.get(i) > array.get(i + 1)) {
                 return false;
             }
