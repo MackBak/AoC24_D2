@@ -9,7 +9,11 @@ public class Main {
         String csvFile = "src/main/resources/data_aocD2.csv";
         CsvReader csvReader = new CsvReader(csvFile);
 
-        List<Integer> arrays = csvReader.csvParseToArrays(csvFile);
-        System.out.println(arrays);
+        List<List<Integer>> arrays = csvReader.csvParseToArrays(csvFile);
+
+        for (int i = 0; i < arrays.size() ; i++) {
+            System.out.println("### Printing Array " + i + " ###");
+            System.out.println(arrays.get(i));
+        }
     }
 }

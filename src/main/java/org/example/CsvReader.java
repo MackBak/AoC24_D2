@@ -14,21 +14,23 @@ public class CsvReader {
         this.fileName = fileName;
     }
 
-    public List<Integer> csvParseToArrays(String csvFile) throws IOException {
-        List<Integer> arrays = new ArrayList<>();
+    public List<List<Integer>> csvParseToArrays(String csvFile) throws IOException {
+        List<List<Integer>> arrays = new ArrayList<>();
         BufferedReader bufferedReader = new BufferedReader(new FileReader(csvFile));
         String line;
+
         while ((line = bufferedReader.readLine()) != null) {
-            String[] values = line.split(","); // TODO: Doublecheck cause some parts in CSV end with ,,,,
+            String[] values = line.split(",");
             List<Integer> temp = new ArrayList<>();
 
             for (String value : values) {
-                if (!value.isBlank()) { // TODO: Maybe isEmpty?
+                if (!value.isBlank()) {
                     temp.add(Integer.parseInt(value));
                 }
             }
-            arrays.addAll(temp);
+            arrays.add(temp);
         }
+        bufferedReader.close();
         return arrays;
     }
 }
